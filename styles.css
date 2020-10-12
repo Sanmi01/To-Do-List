@@ -1,159 +1,63 @@
+* {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
 body {
     padding: 0;
     margin: 0;
-    background-color: gray;
+    background: linear-gradient(to right, #c50707, #06b9e6);
 }
 
-.container {
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 90vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    border-radius: 30px;
+    margin: 5px;
+}
+
+.calculator-grid>button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgb(20, 1, 1);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
     padding: 10px;
-    width: 380px;
-    margin: 0 auto;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-header {
-    background-image: url(https://image.freepik.com/free-vector/colorful-flow-background_23-2148632517.jpg);
-    height: 200px;
-    width: 380px;
-    background-repeat: no-repeat;
-    background-size: 100% 200%;
-    border-radius: 15px 15px 0 0;
-    position: relative;
+.output .previousOperand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
 }
 
-.clear {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
-
-.clear i {
-    font-size: 30px;
-    color: #fff;
-}
-
-.clear i:hover {
-    cursor: pointer;
-    text-shadow: 1px 3px 5px black;
-    transform: rotate(90deg);
-}
-
-#date {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: whitesmoke;
-    font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.content {
-    width: 380px;
-    height: 350px;
-    max-height: 350px;
-    background-color: white;
-    overflow: auto
-}
-
-.content ul{
-    padding:0;
-    margin:0;
-}
-.item{
-    width:380px;
-    height: 45px;
-    min-height: 45px;
-    position: relative;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.item i.co{
-    position: absolute;
-    font-size: 25px;
-    padding-left:5px;
-    left:15px;
-    top:10px;
-}
-.item i.co:hover{
-    cursor: pointer;
-}
-
-.item p.text{
-    position: absolute;
-    padding:0;
-    margin:0;
-    font-size: 20px;
-    left:50px;
-    top:5px;
-    background-color: #FFF;
-    max-width:285px;
-}
-.lineThrough{
-    text-decoration: line-through;
-    color : #ccc;
-}
-
-
-.add-item{
-    position: relative;
-    width: 380px;
-    height: 55px;
-    background-color: #FFF;
-    padding: 10px;
-    border-top: 1px solid rgba(0,0,0,0.1);
-}
-.add-item i{
-    position: absolute;
-    font-size: 40px;
-    color: #4162f6;
-}
-
-.add-item input{
-    position: absolute;
-    left: 50px;
-    height: 35px;
-    width: 310px;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    padding-left:10px;
-    margin-left: 5px;
-}
-
-.fa-trash {
-    position: absolute;
-    font-size: 25px;
-    right: 15px;
-    top: 10px;
-}
-
-.fa-trash:hover {
-    cursor: pointer;
-    color: aqua;
-}
-
-.fa-circle{
-    position: absolute;
-    font-size: 25px;
-    padding-left:5px;
-    left:15px;
-    top:10px;
-    color: darkgray;
-}
-.fa-circle:hover{
-    cursor: pointer;
-}
-
-.fa-check-circle{
-    color:#6eb200;
-    position: absolute;
-    font-size: 25px;
-    padding-left:5px;
-    left:15px;
-    top:10px;
+.output .currentOperand {
+    color: white;
+    font-size: 2.5rem;
 }
 
 p {
